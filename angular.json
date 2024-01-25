@@ -1,0 +1,109 @@
+{
+  "$schema": "./node_modules/@angular/cli/models/schema.json",
+  "version": 1,
+  "newProjectRoot": "../../src",
+  "projects": {
+    "BlogsApp": {
+      "root": "",
+      "sourceRoot": "src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist"
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            },
+            "development": {}
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:browser-server",
+          "options": {
+            "host": "localhost",
+            "port": 4201,
+            "proxyConfig": "/src/proxies.conf.json"
+          },
+          "configurations": {}
+        }
+      }
+    }
+  },
+  "defaultProject": "BlogsApp",
+  "cli": {
+    "analytics": false
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@angular-builders/custom-webpack": "^1.0.2",
+    "@angular/animations": "~14.0.3",
+    "@angular/cdk": "~14.0.3",
+    "@angular/cli": "~14.0.5",
+    "@angular/common": "~14.0.3",
+    "@angular/compiler": "~14.0.3",
+    "@angular/core": "~14.0.3",
+    "@angular/forms": "~14.0.3",
+    "@angular/http": "^7.2.15",
+    "@angular/platform-browser": "~14.0.3",
+    "@angular/platform-browser-dynamic": "~14.0.3",
+    "@angular/router": "~14.0.3",
+    "@nguniversal/express-engine": "^12.0.0",
+    "@schematics/angular/component": "~9.1.7",
+    "@types/jasmine": "~3.6.0",
+    "@types/node": "~8.11.4",
+    "codelyzer": "^5.2.0",
+    "core-js": "^3.9.1",
+    "hammerjs": "^2.0.8",
+    "jasmine-core": "~3.6.0",
+    "karma": "~4.4.1",
+    "karma-chrome-launcher": "~3.1.0",
+    "karma-cli": "~2.0.0",
+    "karma-coverage-istanbul-reporter": "^2.1.0",
+    "protractor": "~7.0.0",
+    "ts-node": "~8.3.0",
+    "typescript": "4.5.4"
+  },
+  "docker": {
+    "buildArgs": {},
+    "imageName": "blogsapp:latest",
+    "serverPort": 4201,
+    "useDockerCompose": true,
+    "volumes": [
+      "./src/**/*",
+      "./dist"
+    ]
+  },
+  "docker-compose": {
+    "build": {},
+    "services": {}
+  }
+}

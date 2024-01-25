@@ -1,0 +1,49 @@
+{
+  "name": "blogs-app",
+  "version": "1.0.0",
+  "description": "Blogs application in Angular 14 with CRUD capabilities.",
+  "scripts": {
+    "ng": "npm run ngx -- app",
+    "start": "ng serve",
+    "build": "ng build",
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "~14.0.0",
+    "@angular/cdk": "^13.0.0-rc.5",
+    "@angular/common": "~14.0.0",
+    "@angular/compiler": "~14.0.0",
+    "@angular/core": "~14.0.0",
+    "@angular/forms": "~14.0.0",
+    "@angular/material": "^13.0.0-rc.5",
+    "@angular/platform-browser": "~14.0.0",
+    "@angular/platform-browser-dynamic": "~14.0.0",
+    "@angular/router": "~14.0.0",
+    "rxjs": "~7.5.2"
+  },
+  "devDependencies": {
+    "@angular-builders/custom-webpack": "^8.3.6",
+    "@angular/cli": "~14.0.0",
+    "@ngtools/webpack": "~9.0.0",
+    "@schematics/angular/component": "~12.0.5",
+    "@types/jasmine": "^3.6.8",
+    "@types/node": "^14.17.11",
+    "codelyzer": "^6.0.1",
+    "jasmine-core": "~3.9.2",
+    "karma": "~5.2.0",
+    "karma-chrome-launcher": "~4.1.0",
+    "karma-cli": "~2.0.0",
+    "karma-coverage-istanbul-reporter": "^3.0.6",
+    "protractor": "~7.0.0",
+    "@angular/cdk/testing": "^14.0.0"
+  },
+  "browserslist": [
+    "last 2 versions",
+    ">5%",
+    "safari >=9",
+    "ie>=11"
+  ]
+}

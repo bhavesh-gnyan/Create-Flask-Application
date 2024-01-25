@@ -1,0 +1,33 @@
+{
+  "$schema": "./node_modules/@angular/cli/packages/schematics/angular-workspace/src/workspace-schema.json",
+  "version": 1,
+  "newProjectRoot": "../../",
+  "projects": {},
+  "defaultProject": "",
+  "architect": {
+    "build": {
+      "builder": "@angular-builders/custom-webpack:configure-fork-ts-eslint",
+      "options": {}
+    },
+    "serve": {
+      "builder": "@angular-builders/dev-server:browser",
+      "configurations": {
+        "production": {},
+        "development": {
+          "url": "/"
+        }
+      }
+    },
+    "extract-i18n": {
+      "group": "resources",
+      "builder": "@angular/localize:generateResources",
+      "configurations": {}
+    },
+    "test": {
+      "codeCoverage": false,
+      "singleRun": true,
+      "watch": false,
+      "defaultConfiguration": "karma"
+    }
+  }
+}
